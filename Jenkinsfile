@@ -1,9 +1,13 @@
 pipeline {
-    agent { dockerfile true }
+    agent {
+        node {
+            label 'master'
+        }
+    }
     stages {
         stage('Test') {
             steps {
-                sh 'echo "executed"'
+                sh 'docker run -dit --name my-running-app -p 50001:80 my-apache2'
 
             }
         }
