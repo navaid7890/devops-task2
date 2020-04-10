@@ -18,7 +18,7 @@ pipeline {
                      docker run -dit --name my-running-app -p 50001:80 my-apache2
                 fi'''
 
-                sh 'sh html_linter.py index.html'
+                sh 'sh html_lint.py index.html'
             }
         }
     }
