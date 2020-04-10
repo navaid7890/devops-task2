@@ -18,7 +18,7 @@ pipeline {
                      docker run -dit --name my-running-app -p 50001:80 my-apache2
                 fi'''
 
-                sh 'sudo apt install python3-pip'
+                sh 'sh html_linter.py index.html
             }
         }
     }
