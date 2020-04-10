@@ -9,8 +9,8 @@ pipeline {
             steps {
                 sh 'docker build -t my-apache2 .'
                
-                sh label: '', script: '''if [ ! "$(docker ps -q -f name=my-apache2)" ]; then
-                    if [ "$(docker ps -aq -f status=exited -f name=my-apache2)" ]; then
+                sh label: '', script: '''if [ ! "$(docker ps -q -f name=my-running-app)" ]; then
+                    if [ "$(docker ps -aq -f status=exited -f name=my-running-app)" ]; then
                         # cleanup
                         docker rm my-apache2
                     fi
